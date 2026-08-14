@@ -4,3 +4,6 @@ Thumbs.db
 .env
 .env.*
 node_modules/
+
+# Local index written by the memsearch tool. Not part of this repo.
+.memsearch/

@@ -7,7 +7,22 @@
 // Reads public data only, so the default GITHUB_TOKEN is enough.
 
 import { writeFileSync, mkdirSync } from "node:fs";
-import { hero, mergeWall, impact, languages } from "./cards.mjs";
+import { hero, mergeWall, impact, languages, contributions } from "./cards.mjs";
+
+// The contribution calendar exists only in GraphQL. What it returns depends on the
+// token: a repo-scoped GITHUB_TOKEN sees public contributions only, which is what
+// belongs on a public page.
+const CALENDAR_QUERY = `
+  query($login: String!) {
+    user(login: $login) {
+      contributionsCollection {
+        contributionCalendar {
+          totalContributions
+          weeks { contributionDays { date contributionCount weekday } }
+        }
+      }
+    }
+  }`;
 
 const NAME = "som tripathi";
 const TAGLINE = "software · ai · quant · research";
@@ -141,6 +156,43 @@ export default async function build({ github, context, core }) {
     .slice(0, 8);
   core.info(`languages: ${langs.map((l) => l.name).join(", ")}`);
 
+  // ---- contribution calendar and streaks.
+  let calendar = null;
+  try {
+    const res = await github.graphql(CALENDAR_QUERY, { login: owner });
+    const cal = res.user.contributionsCollection.contributionCalendar;
+    const weeks = cal.weeks.map((wk) =>
+      wk.contributionDays.map((d) => ({
+        date: d.date,
+        count: d.contributionCount,
+        weekday: d.weekday,
+      })),
+    );
+    const days = weeks.flat();
+
+    let longest = 0;
+    let run = 0;
+    for (const d of days) {
+      run = d.count > 0 ? run + 1 : 0;
+      if (run > longest) longest = run;
+    }
+
+    let current = 0;
+    for (let i = days.length - 1; i >= 0; i--) {
+      if (days[i].count > 0) current += 1;
+      else if (i === days.length - 1) continue; // a quiet today does not end a live streak
+      else break;
+    }
+
+    calendar = { weeks, total: cal.totalContributions, current, longest };
+    core.info(
+      `calendar: ${cal.totalContributions} public contributions, ` +
+        `current streak ${current}, longest ${longest}, ${days.length} days.`,
+    );
+  } catch (error) {
+    core.info(`Contribution calendar unavailable, keeping the previous card: ${error.message}`);
+  }
+
   const stats = [
     { value: String(mergedPublic.length), label: "MERGED UPSTREAM" },
     { value: String(openPublic.length), label: "OPEN PULL REQUESTS" },
@@ -158,6 +210,8 @@ export default async function build({ github, context, core }) {
       impact: impact({ theme, stats }),
       languages: languages({ theme, langs }),
     };
+    // Omitted when the calendar query failed, so the previous card survives untouched.
+    if (calendar) cards.contributions = contributions({ theme, ...calendar });
     for (const [key, svg] of Object.entries(cards)) {
       writeFileSync(`assets/${key}-${theme}.svg`, svg);
       written += 1;

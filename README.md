@@ -23,6 +23,11 @@
 </p>
 
 <picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/somtri/somtri/main/assets/contributions-dark.svg">
+  <img alt="Public contribution calendar for the last year, with current and longest streak" src="https://raw.githubusercontent.com/somtri/somtri/main/assets/contributions-light.svg" width="100%">
+</picture>
+
+<picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/somtri/somtri/main/assets/languages-dark.svg">
   <img alt="Language distribution by bytes across original repositories" src="https://raw.githubusercontent.com/somtri/somtri/main/assets/languages-light.svg" width="100%">
 </picture>

@@ -36,6 +36,16 @@ export const esc = (s) =>
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
 
+const rgb = (hex) => [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16));
+
+/** Mix `fg` over `bg` at ratio `t`, returning an opaque hex colour. */
+function blend(fg, bg, t) {
+  const [a, b] = [rgb(fg), rgb(bg)];
+  return `#${a
+    .map((c, i) => Math.round(c * t + b[i] * (1 - t)).toString(16).padStart(2, "0"))
+    .join("")}`;
+}
+
 /** Truncate to fit a pixel budget at a given monospace size. */
 export function fitMono(text, maxPx, size) {
   const clean = String(text).replace(/\s+/g, " ").trim();
@@ -206,6 +216,116 @@ export function impact({ theme, stats }) {
   <rect x="216" y="72" width="1" height="180" fill="${t.line}"/>
   <rect x="29" y="162" width="374" height="1" fill="${t.line}"/>
 ${cells.join("\n")}`,
+  });
+}
+
+// ---------------------------------------------------------------- contributions
+
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const CELL = 11;
+const PITCH = 13;
+
+/**
+ * Contribution calendar plus streak figures.
+ *
+ * Shading uses quartiles of the non-zero days rather than a fraction of the busiest
+ * day. One 44-contribution day would otherwise flatten every ordinary day into the
+ * lightest band and the graph would carry no information.
+ */
+export function contributions({ theme, weeks, total, current, longest }) {
+  const t = THEMES[theme];
+  const w = 880;
+  const h = 304;
+  const gx = 66;
+  const gy = 174;
+
+  const levels = [
+    blend(t.ink, t.paper, 0.08),
+    blend(t.accent, t.paper, 0.28),
+    blend(t.accent, t.paper, 0.5),
+    blend(t.accent, t.paper, 0.74),
+    t.accent,
+  ];
+
+  const nonZero = weeks
+    .flat()
+    .map((d) => d.count)
+    .filter((c) => c > 0)
+    .sort((a, b) => a - b);
+  const q = (p) => (nonZero.length ? nonZero[Math.floor((nonZero.length - 1) * p)] : 0);
+  const [q1, q2, q3] = [q(0.25), q(0.5), q(0.75)];
+  const level = (c) => (c === 0 ? 0 : c <= q1 ? 1 : c <= q2 ? 2 : c <= q3 ? 3 : 4);
+
+  const cells = weeks
+    .map((week, wi) =>
+      week
+        .map(
+          (d) =>
+            // No <title> per cell: tooltips are inert inside <img>, and 370 of them
+            // tripled the file size for no benefit. The aria-label carries the summary.
+            `<rect x="${gx + wi * PITCH}" y="${gy + d.weekday * PITCH}" width="${CELL}" height="${CELL}" rx="2.5" fill="${levels[level(d.count)]}"/>`,
+        )
+        .join(""),
+    )
+    .join("\n  ");
+
+  let lastMonth = -1;
+  const monthLabels = weeks
+    .map((week, wi) => {
+      const first = week[0];
+      if (!first) return "";
+      const m = Number(first.date.slice(5, 7)) - 1;
+      if (m === lastMonth) return "";
+      lastMonth = m;
+      return `<text class="m" x="${gx + wi * PITCH}" y="${gy - 8}" font-size="10.5" fill="${t.faint}">${MONTHS[m]}</text>`;
+    })
+    .filter(Boolean)
+    .join("\n  ");
+
+  const dayLabels = [
+    [1, "Mon"],
+    [3, "Wed"],
+    [5, "Fri"],
+  ]
+    .map(
+      ([row, name]) =>
+        `<text class="m" x="34" y="${gy + row * PITCH + 8.5}" font-size="10" fill="${t.faint}">${name}</text>`,
+    )
+    .join("\n  ");
+
+  const stats = [
+    { value: String(total), label: "CONTRIBUTIONS · PUBLIC" },
+    { value: String(current), label: "CURRENT STREAK · DAYS" },
+    { value: String(longest), label: "LONGEST STREAK · DAYS" },
+  ]
+    .map((s, i) => {
+      const x = 34 + i * 271;
+      return `<text class="d" x="${x}" y="106" font-size="34" font-weight="700" letter-spacing="-0.03em" fill="${i === 1 ? t.live : t.ink}">${esc(s.value)}</text>
+  <text class="m" x="${x + 2}" y="126" font-size="10.5" letter-spacing="0.09em" fill="${t.faint}">${esc(s.label)}</text>`;
+    })
+    .join("\n  ");
+
+  const swatches = levels
+    .map(
+      (fill, i) =>
+        `<rect x="${674 + i * PITCH}" y="${279}" width="${CELL}" height="${CELL}" rx="2.5" fill="${fill}"/>`,
+    )
+    .join("");
+
+  return doc({
+    w,
+    h,
+    label: `Contribution calendar. ${total} public contributions in the last year, current streak ${current} days, longest streak ${longest} days.`,
+    style: "",
+    body: `${shell({ w, h, t, title: "contributions --public --year" })}
+  ${stats}
+  <rect x="34" y="146" width="${w - 68}" height="1" fill="${t.line}"/>
+  ${monthLabels}
+  ${dayLabels}
+  ${cells}
+  <text class="m" x="640" y="288" font-size="10" letter-spacing="0.08em" fill="${t.faint}">LESS</text>
+  ${swatches}
+  <text class="m" x="747" y="288" font-size="10" letter-spacing="0.08em" fill="${t.faint}">MORE</text>`,
   });
 }
 

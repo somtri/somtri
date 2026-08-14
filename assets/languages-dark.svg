@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="880" height="150" viewBox="0 0 880 150" role="img" aria-label="Language distribution: TypeScript 32.5 percent, C++ 26.5 percent, Python 24.6 percent, Jupyter Notebook 4.9 percent, Rust 3.7 percent, R 3.7 percent, JavaScript 3.6 percent, C 0.6 percent.">
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="150" viewBox="0 0 880 150" role="img" aria-label="Language distribution: TypeScript 32.8 percent, C++ 26.7 percent, Python 24.8 percent, Jupyter Notebook 5.0 percent, Rust 3.7 percent, R 3.7 percent, JavaScript 2.7 percent, C 0.6 percent.">
   <style>
     .m { font-family: Hack, 'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace; }
     .d { font-family: 'Space Grotesk', 'Segoe UI', system-ui, -apple-system, sans-serif; }
@@ -12,21 +12,21 @@
   <rect x="1" y="1" width="878" height="148" rx="12" fill="none" stroke="#ffffff40"/>
   <text class="m" x="34" y="46" font-size="11" letter-spacing="0.12em" fill="#ffffff6b">PROGRAMMING LANGUAGES BY BYTES, ACROSS ORIGINAL REPOSITORIES &#183; MARKUP EXCLUDED</text>
   <clipPath id="bar"><rect x="34" y="76" width="812" height="14" rx="7"/></clipPath>
-  <g clip-path="url(#bar)"><rect x="34.0" y="76" width="264.1" height="14" fill="#3178c6"/><rect x="298.1" y="76" width="214.9" height="14" fill="#f34b7d"/><rect x="512.9" y="76" width="199.5" height="14" fill="#3572A5"/><rect x="712.5" y="76" width="40.1" height="14" fill="#DA5B0B"/><rect x="752.5" y="76" width="29.8" height="14" fill="#dea584"/><rect x="782.4" y="76" width="29.7" height="14" fill="#198CE7"/><rect x="812.1" y="76" width="29.2" height="14" fill="#f1e05a"/><rect x="841.3" y="76" width="4.7" height="14" fill="#555555"/></g>
+  <g clip-path="url(#bar)"><rect x="34.0" y="76" width="266.5" height="14" fill="#3178c6"/><rect x="300.5" y="76" width="216.9" height="14" fill="#f34b7d"/><rect x="517.3" y="76" width="201.4" height="14" fill="#3572A5"/><rect x="718.7" y="76" width="40.4" height="14" fill="#DA5B0B"/><rect x="759.1" y="76" width="30.1" height="14" fill="#dea584"/><rect x="789.2" y="76" width="30.0" height="14" fill="#198CE7"/><rect x="819.2" y="76" width="22.0" height="14" fill="#f1e05a"/><rect x="841.2" y="76" width="4.8" height="14" fill="#555555"/></g>
 <circle cx="39" cy="114" r="5" fill="#3178c6"/>
-  <text class="m" x="51" y="118" font-size="11.5" fill="#ffffffb3">TypeScript <tspan fill="#ffffff6b">32.5%</tspan></text>
+  <text class="m" x="51" y="118" font-size="11.5" fill="#ffffffb3">TypeScript <tspan fill="#ffffff6b">32.8%</tspan></text>
 <circle cx="205" cy="114" r="5" fill="#f34b7d"/>
-  <text class="m" x="217" y="118" font-size="11.5" fill="#ffffffb3">C++ <tspan fill="#ffffff6b">26.5%</tspan></text>
+  <text class="m" x="217" y="118" font-size="11.5" fill="#ffffffb3">C++ <tspan fill="#ffffff6b">26.7%</tspan></text>
 <circle cx="371" cy="114" r="5" fill="#3572A5"/>
-  <text class="m" x="383" y="118" font-size="11.5" fill="#ffffffb3">Python <tspan fill="#ffffff6b">24.6%</tspan></text>
+  <text class="m" x="383" y="118" font-size="11.5" fill="#ffffffb3">Python <tspan fill="#ffffff6b">24.8%</tspan></text>
 <circle cx="537" cy="114" r="5" fill="#DA5B0B"/>
-  <text class="m" x="549" y="118" font-size="11.5" fill="#ffffffb3">Jupyter Note… <tspan fill="#ffffff6b">4.9%</tspan></text>
+  <text class="m" x="549" y="118" font-size="11.5" fill="#ffffffb3">Jupyter Note… <tspan fill="#ffffff6b">5.0%</tspan></text>
 <circle cx="703" cy="114" r="5" fill="#dea584"/>
   <text class="m" x="715" y="118" font-size="11.5" fill="#ffffffb3">Rust <tspan fill="#ffffff6b">3.7%</tspan></text>
 <circle cx="39" cy="136" r="5" fill="#198CE7"/>
   <text class="m" x="51" y="140" font-size="11.5" fill="#ffffffb3">R <tspan fill="#ffffff6b">3.7%</tspan></text>
 <circle cx="205" cy="136" r="5" fill="#f1e05a"/>
-  <text class="m" x="217" y="140" font-size="11.5" fill="#ffffffb3">JavaScript <tspan fill="#ffffff6b">3.6%</tspan></text>
+  <text class="m" x="217" y="140" font-size="11.5" fill="#ffffffb3">JavaScript <tspan fill="#ffffff6b">2.7%</tspan></text>
 <circle cx="371" cy="136" r="5" fill="#555555"/>
   <text class="m" x="383" y="140" font-size="11.5" fill="#ffffffb3">C <tspan fill="#ffffff6b">0.6%</tspan></text>
 </svg>
