@@ -48,12 +48,28 @@ jobs:
 
       - name: Commit the cards that changed
         run: |
-          if git diff --quiet -- assets; then
-            echo "No card changed. Nothing to commit."
-            exit 0
-          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets
-          git commit -m "chore: refresh profile cards"
-          git push
+
+          # Another run can push while this one is rendering, which makes a plain
+          # push fail as non-fast-forward (observed 2026-08-14). Move onto the newest
+          # remote commit before committing, keeping the cards this run generated:
+          # they are a pure function of current GitHub data, so they always win.
+          for attempt in 1 2 3; do
+            git fetch --quiet origin main
+            git reset --quiet --soft origin/main
+            git add assets
+            if git diff --cached --quiet; then
+              echo "No card changed. Nothing to commit."
+              exit 0
+            fi
+            git commit --quiet -m "chore: refresh profile cards"
+            if git push --quiet origin HEAD:main; then
+              echo "Pushed on attempt ${attempt}."
+              exit 0
+            fi
+            echo "Push rejected on attempt ${attempt}. Retrying against the new tip."
+            git reset --quiet --soft HEAD~1
+          done
+          echo "Could not push after 3 attempts."
+          exit 1
