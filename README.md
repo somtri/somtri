@@ -28,14 +28,14 @@ Merged patches in Zed, TensorFlow, CuPy, CloudCompare and memsearch, with open w
 <!-- OSS:START -->
 
 ```
-16 merged  ·  27 open  ·  15 upstream repositories
+7 merged  ·  27 open  ·  14 upstream repositories
 
 zed-industries/zed          #61997    editor: Align selections by display posit…  2026-08-14
 CloudCompare/CloudCompare   #2356     Add -PLY_NO_SF_PREFIX command line option…  2026-08-13
 tensorflow/tensorflow       #125041   Reconcile bounded-dynamic prefix dims in …  2026-08-13
-baskargroup/corn_kernel_a…  #18       README does not document the flags, the u…  2026-08-13
-baskargroup/corn_kernel_a…  #17       test/ scripts are hardcoded to a single s…  2026-08-13
 zilliztech/memsearch        #663      fix(store): don't report every local open…  2026-08-12
+tensorflow/tensorflow       #124966   Reconcile bounded-dynamic dims in BCastGr…  2026-08-11
+CloudCompare/CloudCompare   #2347     Add -MATCH_SCALES command line option (#1…  2026-07-25
 ```
 
 <!-- OSS:END -->
