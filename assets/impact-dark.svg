@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="432" height="300" viewBox="0 0 432 300" role="img" aria-label="Open source impact. 7 MERGED UPSTREAM, 27 OPEN PULL REQUESTS, 14 UPSTREAM REPOS, 474k STARS REACHED.">
+  <style>
+    .m { font-family: Hack, 'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace; }
+    .d { font-family: 'Space Grotesk', 'Segoe UI', system-ui, -apple-system, sans-serif; }
+
+  </style>
+<clipPath id="win"><rect x="1" y="1" width="430" height="298" rx="12"/></clipPath>
+  <g clip-path="url(#win)">
+    <rect x="1" y="1" width="430" height="298" fill="#000000"/>
+    <rect x="1" y="1" width="430" height="45" fill="#1f1f1f"/>
+    <rect x="1" y="45.5" width="430" height="1" fill="#ffffff1f"/>
+    <circle cx="26" cy="23.5" r="6" fill="#2f6bff"/>
+    <circle cx="48" cy="23.5" r="6" fill="#2ee58a"/>
+    <circle cx="70" cy="23.5" r="6" fill="#ffffff6b"/>
+    <text class="m" x="216" y="28" text-anchor="middle" font-size="12.5" letter-spacing="0.06em" fill="#ffffff6b">impact --upstream</text>
+  </g>
+  <rect x="1" y="1" width="430" height="298" rx="12" fill="none" stroke="#ffffff40"/>
+  <rect x="216" y="72" width="1" height="180" fill="#ffffff1f"/>
+  <rect x="29" y="162" width="374" height="1" fill="#ffffff1f"/>
+<text class="d" x="29" y="108" font-size="44" font-weight="700" letter-spacing="-0.03em" fill="#2ee58a">7</text>
+  <text class="m" x="31" y="132" font-size="11" letter-spacing="0.1em" fill="#ffffff6b">MERGED UPSTREAM</text>
+<text class="d" x="232" y="108" font-size="44" font-weight="700" letter-spacing="-0.03em" fill="#ffffff">27</text>
+  <text class="m" x="234" y="132" font-size="11" letter-spacing="0.1em" fill="#ffffff6b">OPEN PULL REQUESTS</text>
+<text class="d" x="29" y="216" font-size="44" font-weight="700" letter-spacing="-0.03em" fill="#ffffff">14</text>
+  <text class="m" x="31" y="240" font-size="11" letter-spacing="0.1em" fill="#ffffff6b">UPSTREAM REPOS</text>
+<text class="d" x="232" y="216" font-size="44" font-weight="700" letter-spacing="-0.03em" fill="#ffffff">474k</text>
+  <text class="m" x="234" y="240" font-size="11" letter-spacing="0.1em" fill="#ffffff6b">STARS REACHED</text>
+</svg>

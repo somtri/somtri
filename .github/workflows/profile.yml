@@ -1,6 +1,6 @@
 name: profile
 
-# Refreshes the activity block in README.md once a day.
+# Regenerates the SVG cards in assets/ once a day.
 #
 # Uses only first-party actions (actions/checkout, actions/github-script) so there is
 # no third-party action to rot. Verified 2026-08-14 against GitHub's own API:
@@ -37,23 +37,23 @@ jobs:
       - name: Check out the profile repo
         uses: actions/checkout@v7.0.1
 
-      - name: Rewrite the activity block
+      - name: Regenerate the SVG cards
         uses: actions/github-script@v9.0.0
         with:
           script: |
-            const { default: update } = await import(
-              `${process.env.GITHUB_WORKSPACE}/scripts/update-readme.mjs`
+            const { default: build } = await import(
+              `${process.env.GITHUB_WORKSPACE}/scripts/build-profile.mjs`
             )
-            await update({ github, context, core })
+            await build({ github, context, core })
 
-      - name: Commit the result when it changed
+      - name: Commit the cards that changed
         run: |
-          if git diff --quiet -- README.md; then
-            echo "README.md unchanged. Nothing to commit."
+          if git diff --quiet -- assets; then
+            echo "No card changed. Nothing to commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md
-          git commit -m "chore: refresh activity block"
+          git add assets
+          git commit -m "chore: refresh profile cards"
           git push
