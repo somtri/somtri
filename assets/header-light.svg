@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="330" viewBox="0 0 880 330" role="img" aria-label="Terminal window. som tripathi, software, ai, quant and research. Computer vision research intern at AIIRA, ml research intern at TAIC, Iowa State University.">
+  <style>
+    .mono { font-family: Hack, "JetBrains Mono", "SF Mono", Menlo, Consolas, "Liberation Mono", "Courier New", monospace; }
+    .disp { font-family: "Space Grotesk", "Segoe UI", system-ui, -apple-system, sans-serif; }
+    .cur  { animation: blink 1.1s steps(1) infinite; }
+    @keyframes blink { 0%, 49% { opacity: 1 } 50%, 100% { opacity: 0 } }
+    @media (prefers-reduced-motion: reduce) { .cur { animation: none } }
+  </style>
+
+  <clipPath id="win"><rect x="1" y="1" width="878" height="328" rx="12"/></clipPath>
+  <g clip-path="url(#win)">
+    <rect x="1" y="1" width="878" height="328" fill="#ffffff"/>
+    <rect x="1" y="1" width="878" height="45" fill="#f3f3f3"/>
+    <rect x="1" y="45.5" width="878" height="1" fill="#0000001f"/>
+  </g>
+  <rect x="1" y="1" width="878" height="328" rx="12" fill="none" stroke="#0000004d" stroke-width="1"/>
+
+  <circle cx="26" cy="23.5" r="6" fill="#0b76cc"/>
+  <circle cx="48" cy="23.5" r="6" fill="#0a7a46"/>
+  <circle cx="70" cy="23.5" r="6" fill="#00000073"/>
+  <text class="mono" x="440" y="28" text-anchor="middle" font-size="12.5" letter-spacing="0.06em" fill="#00000073">somtri@github: ~</text>
+
+  <text class="mono" x="34" y="92" font-size="14.5" letter-spacing="0.02em">
+    <tspan fill="#0b76cc">$</tspan><tspan fill="#000000" font-weight="500"> whoami</tspan>
+  </text>
+
+  <text class="disp" x="34" y="139" font-size="36" font-weight="700" letter-spacing="-0.02em" fill="#000000">som tripathi</text>
+  <text class="mono" x="35" y="167" font-size="13.5" letter-spacing="0.09em" fill="#0b76cc">software &#183; ai &#183; quant &#183; research</text>
+
+  <text class="mono" x="34" y="213" font-size="14.5" letter-spacing="0.02em">
+    <tspan fill="#0b76cc">$</tspan><tspan fill="#000000" font-weight="500"> cat now.txt</tspan>
+  </text>
+
+  <text class="mono" x="35" y="242" font-size="13.5" fill="#000000ad">computer vision research intern @ AIIRA</text>
+  <text class="mono" x="35" y="268" font-size="13.5" fill="#000000ad">ml research intern @ TAIC &#183; iowa state university</text>
+
+  <text class="mono" x="34" y="305" font-size="14.5" fill="#0b76cc">$</text>
+  <rect class="cur" x="48" y="293.5" width="9" height="15" fill="#000000"/>
+
+  <text class="mono" x="846" y="305" text-anchor="end" font-size="11.5" letter-spacing="0.05em" fill="#00000073">42.026&#176;N 93.646&#176;W</text>
+</svg>

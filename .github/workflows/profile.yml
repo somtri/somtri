@@ -1,0 +1,59 @@
+name: profile
+
+# Refreshes the activity block in README.md once a day.
+#
+# Uses only first-party actions (actions/checkout, actions/github-script) so there is
+# no third-party action to rot. Verified 2026-08-14 against GitHub's own API:
+#   actions/checkout      v7.0.1  (released 2026-07-20)
+#   actions/github-script v9.0.0  (released 2026-04-09)
+#
+# The cron deliberately avoids the top of the hour: GitHub documents that scheduled
+# workflows are delayed during high load, and that queued jobs may be dropped.
+#
+# Caveat worth knowing: GitHub disables scheduled workflows after 60 days of
+# repository inactivity. Run this workflow from the Actions tab to re-arm it.
+
+on:
+  schedule:
+    - cron: "17 5 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - ".github/workflows/profile.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the profile repo
+        uses: actions/checkout@v7.0.1
+
+      - name: Rewrite the activity block
+        uses: actions/github-script@v9.0.0
+        with:
+          script: |
+            const { default: update } = await import(
+              `${process.env.GITHUB_WORKSPACE}/scripts/update-readme.mjs`
+            )
+            await update({ github, context, core })
+
+      - name: Commit the result when it changed
+        run: |
+          if git diff --quiet -- README.md; then
+            echo "README.md unchanged. Nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "chore: refresh activity block"
+          git push
