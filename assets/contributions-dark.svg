@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="880" height="304" viewBox="0 0 880 304" role="img" aria-label="Contribution calendar. 316 public contributions in the last year, current streak 12 days, longest streak 12 days.">
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="304" viewBox="0 0 880 304" role="img" aria-label="Contribution calendar. 316 public contributions in the last year, current streak 0 days, longest streak 12 days.">
   <style>
     .m { font-family: Hack, 'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace; }
     .d { font-family: 'Space Grotesk', 'Segoe UI', system-ui, -apple-system, sans-serif; }
@@ -17,7 +17,7 @@
   <rect x="1" y="1" width="878" height="302" rx="12" fill="none" stroke="#ffffff40"/>
   <text class="d" x="34" y="106" font-size="34" font-weight="700" letter-spacing="-0.03em" fill="#ffffff">316</text>
   <text class="m" x="36" y="126" font-size="10.5" letter-spacing="0.09em" fill="#ffffff6b">CONTRIBUTIONS · PUBLIC</text>
-  <text class="d" x="305" y="106" font-size="34" font-weight="700" letter-spacing="-0.03em" fill="#2ee58a">12</text>
+  <text class="d" x="305" y="106" font-size="34" font-weight="700" letter-spacing="-0.03em" fill="#2ee58a">0</text>
   <text class="m" x="307" y="126" font-size="10.5" letter-spacing="0.09em" fill="#ffffff6b">CURRENT STREAK · DAYS</text>
   <text class="d" x="576" y="106" font-size="34" font-weight="700" letter-spacing="-0.03em" fill="#ffffff">12</text>
   <text class="m" x="578" y="126" font-size="10.5" letter-spacing="0.09em" fill="#ffffff6b">LONGEST STREAK · DAYS</text>
@@ -90,7 +90,7 @@
   <rect x="703" y="174" width="11" height="11" rx="2.5" fill="#141414"/><rect x="703" y="187" width="11" height="11" rx="2.5" fill="#0d1e47"/><rect x="703" y="200" width="11" height="11" rx="2.5" fill="#141414"/><rect x="703" y="213" width="11" height="11" rx="2.5" fill="#141414"/><rect x="703" y="226" width="11" height="11" rx="2.5" fill="#0d1e47"/><rect x="703" y="239" width="11" height="11" rx="2.5" fill="#0d1e47"/><rect x="703" y="252" width="11" height="11" rx="2.5" fill="#141414"/>
   <rect x="716" y="174" width="11" height="11" rx="2.5" fill="#183680"/><rect x="716" y="187" width="11" height="11" rx="2.5" fill="#234fbd"/><rect x="716" y="200" width="11" height="11" rx="2.5" fill="#141414"/><rect x="716" y="213" width="11" height="11" rx="2.5" fill="#141414"/><rect x="716" y="226" width="11" height="11" rx="2.5" fill="#141414"/><rect x="716" y="239" width="11" height="11" rx="2.5" fill="#141414"/><rect x="716" y="252" width="11" height="11" rx="2.5" fill="#2f6bff"/>
   <rect x="729" y="174" width="11" height="11" rx="2.5" fill="#2f6bff"/><rect x="729" y="187" width="11" height="11" rx="2.5" fill="#2f6bff"/><rect x="729" y="200" width="11" height="11" rx="2.5" fill="#183680"/><rect x="729" y="213" width="11" height="11" rx="2.5" fill="#0d1e47"/><rect x="729" y="226" width="11" height="11" rx="2.5" fill="#183680"/><rect x="729" y="239" width="11" height="11" rx="2.5" fill="#234fbd"/><rect x="729" y="252" width="11" height="11" rx="2.5" fill="#183680"/>
-  <rect x="742" y="174" width="11" height="11" rx="2.5" fill="#183680"/><rect x="742" y="187" width="11" height="11" rx="2.5" fill="#0d1e47"/><rect x="742" y="200" width="11" height="11" rx="2.5" fill="#0d1e47"/><rect x="742" y="213" width="11" height="11" rx="2.5" fill="#183680"/><rect x="742" y="226" width="11" height="11" rx="2.5" fill="#141414"/>
+  <rect x="742" y="174" width="11" height="11" rx="2.5" fill="#183680"/><rect x="742" y="187" width="11" height="11" rx="2.5" fill="#0d1e47"/><rect x="742" y="200" width="11" height="11" rx="2.5" fill="#0d1e47"/><rect x="742" y="213" width="11" height="11" rx="2.5" fill="#183680"/><rect x="742" y="226" width="11" height="11" rx="2.5" fill="#141414"/><rect x="742" y="239" width="11" height="11" rx="2.5" fill="#141414"/>
   <text class="m" x="640" y="288" font-size="10" letter-spacing="0.08em" fill="#ffffff6b">LESS</text>
   <rect x="674" y="279" width="11" height="11" rx="2.5" fill="#141414"/><rect x="687" y="279" width="11" height="11" rx="2.5" fill="#0d1e47"/><rect x="700" y="279" width="11" height="11" rx="2.5" fill="#183680"/><rect x="713" y="279" width="11" height="11" rx="2.5" fill="#234fbd"/><rect x="726" y="279" width="11" height="11" rx="2.5" fill="#2f6bff"/>
   <text class="m" x="747" y="288" font-size="10" letter-spacing="0.08em" fill="#ffffff6b">MORE</text>
