@@ -9,13 +9,16 @@
 import { writeFileSync, mkdirSync } from "node:fs";
 import { hero, mergeWall, impact, languages, contributions } from "./cards.mjs";
 
-// The contribution calendar exists only in GraphQL. What it returns depends on the
-// token: a repo-scoped GITHUB_TOKEN sees public contributions only, which is what
-// belongs on a public page.
+// The contribution calendar exists only in GraphQL. The total covers work in private
+// repositories once the account switches on "Private contribution counts", and GitHub
+// anonymises that work first: a number for the day, never a repository or a message.
+// restrictedContributionsCount is how a repo-scoped token detects the setting, because
+// it counts only the contributions this viewer is not allowed to look at directly.
 const CALENDAR_QUERY = `
   query($login: String!) {
     user(login: $login) {
       contributionsCollection {
+        restrictedContributionsCount
         contributionCalendar {
           totalContributions
           weeks { contributionDays { date contributionCount weekday } }
@@ -161,6 +164,7 @@ export default async function build({ github, context, core }) {
   try {
     const res = await github.graphql(CALENDAR_QUERY, { login: owner });
     const cal = res.user.contributionsCollection.contributionCalendar;
+    const restricted = res.user.contributionsCollection.restrictedContributionsCount;
     const weeks = cal.weeks.map((wk) =>
       wk.contributionDays.map((d) => ({
         date: d.date,
@@ -184,9 +188,10 @@ export default async function build({ github, context, core }) {
       else break;
     }
 
-    calendar = { weeks, total: cal.totalContributions, current, longest };
+    calendar = { weeks, total: cal.totalContributions, current, longest, restricted };
     core.info(
-      `calendar: ${cal.totalContributions} public contributions, ` +
+      `calendar: ${cal.totalContributions} contributions ` +
+        `(${restricted} of them anonymised from private repos), ` +
         `current streak ${current}, longest ${longest}, ${days.length} days.`,
     );
   } catch (error) {
@@ -197,7 +202,11 @@ export default async function build({ github, context, core }) {
     { value: String(mergedPublic.length), label: "MERGED UPSTREAM" },
     { value: String(openPublic.length), label: "OPEN PULL REQUESTS" },
     { value: String(meta.size), label: "UPSTREAM REPOS" },
-    { value: compact(stars), label: "STARS REACHED" },
+    // Rounded to the nearest 5k. The combined figure across 14 upstream repos moves
+    // every few hours, so an exact count rewrote this card - and committed it - on
+    // almost every scheduled run while telling the reader nothing new. The exact
+    // number is still logged above.
+    { value: compact(Math.round(stars / 5000) * 5000), label: "STARS REACHED" },
   ];
 
   // ---- render.

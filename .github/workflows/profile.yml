@@ -1,6 +1,10 @@
 name: profile
 
-# Regenerates the SVG cards in assets/ once a day.
+# Regenerates the SVG cards in assets/ every three hours.
+#
+# Polling is the only option available. The merges this page shows happen in
+# repositories somebody else owns (tensorflow, zed, cupy), so no webhook can reach
+# here and the workflow has to ask on a timer.
 #
 # Uses only first-party actions (actions/checkout, actions/github-script) so there is
 # no third-party action to rot. Verified 2026-08-14 against GitHub's own API:
@@ -15,7 +19,7 @@ name: profile
 
 on:
   schedule:
-    - cron: "17 5 * * *"
+    - cron: "17 */3 * * *"
   workflow_dispatch:
   push:
     branches: [main]

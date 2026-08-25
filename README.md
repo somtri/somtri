@@ -24,7 +24,7 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/somtri/somtri/main/assets/contributions-dark.svg">
-  <img alt="Public contribution calendar for the last year, with current and longest streak" src="https://raw.githubusercontent.com/somtri/somtri/main/assets/contributions-light.svg" width="100%">
+  <img alt="Contribution calendar for the last year, with current and longest streak" src="https://raw.githubusercontent.com/somtri/somtri/main/assets/contributions-light.svg" width="100%">
 </picture>
 
 <picture>
@@ -47,11 +47,11 @@ The upstream patches above are mostly the unglamorous version of the same instin
 | project | what it is | what it measured |
 |---|---|---|
 | **[impact-lab](https://github.com/somtri/impact-lab)** · `C++20` | Limit order book engine and a pre-registered aggregate price-impact study. [Live demo](https://somtri.github.io/impact-lab/). | 1.97B Binance futures trades · concave impact γ = 0.760, CI [0.740, 0.782] · 100.0000% book-reconstruction match · 4.06M msg/sec, p50 101 ns |
-| **[flashbulb-amd](https://github.com/somtri/flashbulb-amd)** · `Python` | Self-hostable agent memory. A neural surprise gate decides what to keep, so the write path spends no LLM tokens and no data leaves the machine. [Live demo](https://somtri--flashbulb-amd-web.modal.run/). | 0 write-path tokens over 30 turns, against 2,055 for an LLM-extract baseline · ~5 ms per decision against ~400 ms · runs end to end on one AMD MI300X |
-| **[flashbulb-qwen](https://github.com/somtri/flashbulb-qwen)** · `Python` | Drift-adaptive, zero-write-token memory for a Qwen agent. Qwen Cloud Hackathon, Track 1. | +0.35 clean recall under drift, against the prior state of the art |
+| **[flashbulb](https://github.com/somtri/flashbulb)** · `Python` | Drift-adaptive, zero-write-token memory for a Qwen agent. Qwen Cloud Hackathon, Track 1. | +0.35 clean recall under drift, against the prior state of the art |
 | **[run_scope](https://github.com/somtri/run_scope)** · `Rust` | Real-time experimental process monitoring: WebSockets, React, anomaly detection, SQLite run history. | Live telemetry with persisted, replayable run history |
 | **[smart_signal](https://github.com/somtri/smart_signal)** · `Python` | Stock movement forecasting with chronological validation, random forest modeling, and sentiment features. | Leakage-aware: validation runs in chronological order, so nothing looks ahead |
 | **[portfolio](https://github.com/somtri/portfolio)** · `TypeScript` | The site this page borrows its face from. Next.js, statically generated, one API route. | [somtripathi.dev](https://somtripathi.dev/) |
+| **[poke327](https://github.com/somtri/poke327)** · `C/C++` | Terminal monster-catching RPG in ncurses: procedural generation, trainer pathfinding, turn-based battles. | 401 x 401 procedural world · deterministic replay from `--seed` · move priority, accuracy, STAB and type effectiveness in the battle loop |
 
 <details>
 <summary><code>$ ls -1 work/ --all</code></summary>
@@ -62,7 +62,7 @@ The upstream patches above are mostly the unglamorous version of the same instin
 |---|---|
 | **[macro_markets_ml](https://github.com/somtri/macro_markets_ml)** · `R` | Release-aware analysis of macro signals against next-month S&P 500 direction. [Report](https://somtri.github.io/macro_markets_ml/). |
 | **[cine_ml](https://github.com/somtri/cine_ml)** · `Jupyter` | Movie rating regression on TMDB metadata and OMDb labels, with a Streamlit dashboard. |
-| **[poke327](https://github.com/somtri/poke327)** · `C/C++` | Terminal monster-catching RPG in ncurses: procedural generation, pathfinding, turn-based battles. |
+| **[flashbulb-amd](https://github.com/somtri/flashbulb-amd)** · `Python` | Self-hostable agent memory. A neural surprise gate decides what to keep, so the write path spends no LLM tokens and no data leaves the machine. [Live demo](https://somtri--flashbulb-amd-web.modal.run/). |
 
 </details>
 
@@ -94,4 +94,4 @@ linkedin   https://linkedin.com/in/somtri
 location   ames, ia  ·  42.026°N 93.646°W
 ```
 
-<sub>Every panel above is an SVG regenerated nightly from public GitHub data by <a href="scripts/build-profile.mjs">scripts/build-profile.mjs</a>. The workflow runs on GitHub's own actions only.</sub>
+<sub>Every panel above is an SVG regenerated every three hours from live GitHub data by <a href="scripts/build-profile.mjs">scripts/build-profile.mjs</a>. The workflow runs on GitHub's own actions only.</sub>

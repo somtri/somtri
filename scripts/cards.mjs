@@ -232,8 +232,12 @@ const PITCH = 13;
  * day. One 44-contribution day would otherwise flatten every ordinary day into the
  * lightest band and the graph would carry no information.
  */
-export function contributions({ theme, weeks, total, current, longest }) {
+export function contributions({ theme, weeks, total, current, longest, restricted = 0 }) {
   const t = THEMES[theme];
+  // The total counts private work only when the account shares those counts. Labelling
+  // it from restricted rather than hardcoding it keeps the card honest if that is
+  // ever switched back off, because the number silently drops to public work alone.
+  const withPrivate = restricted > 0;
   const w = 880;
   const h = 304;
   const gx = 66;
@@ -294,7 +298,7 @@ export function contributions({ theme, weeks, total, current, longest }) {
     .join("\n  ");
 
   const stats = [
-    { value: String(total), label: "CONTRIBUTIONS · PUBLIC" },
+    { value: String(total), label: withPrivate ? "CONTRIBUTIONS · ALL REPOS" : "CONTRIBUTIONS · PUBLIC" },
     { value: String(current), label: "CURRENT STREAK · DAYS" },
     { value: String(longest), label: "LONGEST STREAK · DAYS" },
   ]
@@ -315,9 +319,9 @@ export function contributions({ theme, weeks, total, current, longest }) {
   return doc({
     w,
     h,
-    label: `Contribution calendar. ${total} public contributions in the last year, current streak ${current} days, longest streak ${longest} days.`,
+    label: `Contribution calendar. ${total} ${withPrivate ? "" : "public "}contributions in the last year, current streak ${current} days, longest streak ${longest} days.`,
     style: "",
-    body: `${shell({ w, h, t, title: "contributions --public --year" })}
+    body: `${shell({ w, h, t, title: `contributions --${withPrivate ? "all" : "public"} --year` })}
   ${stats}
   <rect x="34" y="146" width="${w - 68}" height="1" fill="${t.line}"/>
   ${monthLabels}
