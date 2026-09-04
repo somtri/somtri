@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" role="img" aria-label="Terminal. som tripathi, software · ai · quant · research. computer vision @ AIIRA  ·  agent memory @ TAIC  ·  iowa state university. Latest merged pull requests: tensorflow/tensorflow 123719, tensorflow/tensorflow 124609, CloudCompare/CloudCompare 2363, CloudCompare/CloudCompare 2361.">
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" role="img" aria-label="Terminal. som tripathi, software · ai · quant · research. computer vision @ AIIRA  ·  agent memory @ TAIC  ·  iowa state university. Latest merged pull requests: zed-industries/zed 63434, tensorflow/tensorflow 123719, tensorflow/tensorflow 124609, CloudCompare/CloudCompare 2363.">
   <style>
     .m { font-family: Hack, 'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace; }
     .d { font-family: 'Space Grotesk', 'Segoe UI', system-ui, -apple-system, sans-serif; }
@@ -25,33 +25,33 @@
       keyTimes="0.000;0.250;0.500;0.750"
       values="256;282;308;334"/>
   </rect>
-<text class="m" x="48" y="274" font-size="13" fill="#ffffffb3">tensorflow/tensorflow</text>
-  <text class="m" x="316" y="274" font-size="13" fill="#ffffff6b">#123719</text>
-  <text class="m" x="400" y="274" font-size="13" fill="#ffffff">Add message-specific regression test …</text>
+<text class="m" x="48" y="274" font-size="13" fill="#ffffffb3">zed-industries/zed</text>
+  <text class="m" x="316" y="274" font-size="13" fill="#ffffff6b">#63434</text>
+  <text class="m" x="400" y="274" font-size="13" fill="#ffffff">editor: Keep deleted git-gutter marke…</text>
   <g opacity="1">
     <animate attributeName="opacity" dur="2.6s" begin="0.00s" repeatCount="indefinite" values="1;0.45;1"/>
     <rect x="772" y="262" width="72" height="17" rx="8.5" fill="none" stroke="#2ee58a"/>
     <text class="m" x="808" y="274" text-anchor="middle" font-size="10" letter-spacing="0.1em" fill="#2ee58a">MERGED</text>
   </g>
 <text class="m" x="48" y="300" font-size="13" fill="#ffffffb3">tensorflow/tensorflow</text>
-  <text class="m" x="316" y="300" font-size="13" fill="#ffffff6b">#124609</text>
-  <text class="m" x="400" y="300" font-size="13" fill="#ffffff">Fix stack overflow in DebugFileIO::Re…</text>
+  <text class="m" x="316" y="300" font-size="13" fill="#ffffff6b">#123719</text>
+  <text class="m" x="400" y="300" font-size="13" fill="#ffffff">Add message-specific regression test …</text>
   <g opacity="1">
     <animate attributeName="opacity" dur="2.6s" begin="0.35s" repeatCount="indefinite" values="1;0.45;1"/>
     <rect x="772" y="288" width="72" height="17" rx="8.5" fill="none" stroke="#2ee58a"/>
     <text class="m" x="808" y="300" text-anchor="middle" font-size="10" letter-spacing="0.1em" fill="#2ee58a">MERGED</text>
   </g>
-<text class="m" x="48" y="326" font-size="13" fill="#ffffffb3">CloudCompare/CloudCompare</text>
-  <text class="m" x="316" y="326" font-size="13" fill="#ffffff6b">#2363</text>
-  <text class="m" x="400" y="326" font-size="13" fill="#ffffff">Add -MIN_SCALE and -MAX_SCALE options…</text>
+<text class="m" x="48" y="326" font-size="13" fill="#ffffffb3">tensorflow/tensorflow</text>
+  <text class="m" x="316" y="326" font-size="13" fill="#ffffff6b">#124609</text>
+  <text class="m" x="400" y="326" font-size="13" fill="#ffffff">Fix stack overflow in DebugFileIO::Re…</text>
   <g opacity="1">
     <animate attributeName="opacity" dur="2.6s" begin="0.70s" repeatCount="indefinite" values="1;0.45;1"/>
     <rect x="772" y="314" width="72" height="17" rx="8.5" fill="none" stroke="#2ee58a"/>
     <text class="m" x="808" y="326" text-anchor="middle" font-size="10" letter-spacing="0.1em" fill="#2ee58a">MERGED</text>
   </g>
 <text class="m" x="48" y="352" font-size="13" fill="#ffffffb3">CloudCompare/CloudCompare</text>
-  <text class="m" x="316" y="352" font-size="13" fill="#ffffff6b">#2361</text>
-  <text class="m" x="400" y="352" font-size="13" fill="#ffffff">Add -STAT_FIT command line option (#1…</text>
+  <text class="m" x="316" y="352" font-size="13" fill="#ffffff6b">#2363</text>
+  <text class="m" x="400" y="352" font-size="13" fill="#ffffff">Add -MIN_SCALE and -MAX_SCALE options…</text>
   <g opacity="1">
     <animate attributeName="opacity" dur="2.6s" begin="1.05s" repeatCount="indefinite" values="1;0.45;1"/>
     <rect x="772" y="340" width="72" height="17" rx="8.5" fill="none" stroke="#2ee58a"/>
