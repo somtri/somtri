@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" role="img" aria-label="Terminal. som tripathi, software · ai · quant · research. computer vision @ AIIRA  ·  agent memory @ TAIC  ·  iowa state university. Latest merged pull requests: tensorflow/tensorflow 128318, CloudCompare/CloudCompare 2442, CloudCompare/CloudCompare 2439, NVIDIA/Personal-AI-Router 95.">
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" role="img" aria-label="Terminal. som tripathi, software · ai · quant · research. computer vision @ AIIRA  ·  agent memory @ TAIC  ·  iowa state university. Latest merged pull requests: NandhaKishorM/laya 875, tensorflow/tensorflow 128318, CloudCompare/CloudCompare 2442, CloudCompare/CloudCompare 2439.">
   <style>
     .m { font-family: Hack, 'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace; }
     .d { font-family: 'Space Grotesk', 'Segoe UI', system-ui, -apple-system, sans-serif; }
@@ -25,33 +25,33 @@
       keyTimes="0.000;0.250;0.500;0.750"
       values="256;282;308;334"/>
   </rect>
-<text class="m" x="48" y="274" font-size="13" fill="#000000ad">tensorflow/tensorflow</text>
-  <text class="m" x="316" y="274" font-size="13" fill="#00000073">#128318</text>
-  <text class="m" x="400" y="274" font-size="13" fill="#000000">Note that CPU kernels reject NCHW in …</text>
+<text class="m" x="48" y="274" font-size="13" fill="#000000ad">NandhaKishorM/laya</text>
+  <text class="m" x="316" y="274" font-size="13" fill="#00000073">#875</text>
+  <text class="m" x="400" y="274" font-size="13" fill="#000000">docs(agent): fix predict_long's note …</text>
   <g opacity="1">
     <animate attributeName="opacity" dur="2.6s" begin="0.00s" repeatCount="indefinite" values="1;0.45;1"/>
     <rect x="772" y="262" width="72" height="17" rx="8.5" fill="none" stroke="#0a7a46"/>
     <text class="m" x="808" y="274" text-anchor="middle" font-size="10" letter-spacing="0.1em" fill="#0a7a46">MERGED</text>
   </g>
-<text class="m" x="48" y="300" font-size="13" fill="#000000ad">CloudCompare/CloudCompare</text>
-  <text class="m" x="316" y="300" font-size="13" fill="#00000073">#2442</text>
-  <text class="m" x="400" y="300" font-size="13" fill="#000000">Command line: add -IMAGE_COLOR_SCALE …</text>
+<text class="m" x="48" y="300" font-size="13" fill="#000000ad">tensorflow/tensorflow</text>
+  <text class="m" x="316" y="300" font-size="13" fill="#00000073">#128318</text>
+  <text class="m" x="400" y="300" font-size="13" fill="#000000">Note that CPU kernels reject NCHW in …</text>
   <g opacity="1">
     <animate attributeName="opacity" dur="2.6s" begin="0.35s" repeatCount="indefinite" values="1;0.45;1"/>
     <rect x="772" y="288" width="72" height="17" rx="8.5" fill="none" stroke="#0a7a46"/>
     <text class="m" x="808" y="300" text-anchor="middle" font-size="10" letter-spacing="0.1em" fill="#0a7a46">MERGED</text>
   </g>
 <text class="m" x="48" y="326" font-size="13" fill="#000000ad">CloudCompare/CloudCompare</text>
-  <text class="m" x="316" y="326" font-size="13" fill="#00000073">#2439</text>
-  <text class="m" x="400" y="326" font-size="13" fill="#000000">Add a save and load round-trip test f…</text>
+  <text class="m" x="316" y="326" font-size="13" fill="#00000073">#2442</text>
+  <text class="m" x="400" y="326" font-size="13" fill="#000000">Command line: add -IMAGE_COLOR_SCALE …</text>
   <g opacity="1">
     <animate attributeName="opacity" dur="2.6s" begin="0.70s" repeatCount="indefinite" values="1;0.45;1"/>
     <rect x="772" y="314" width="72" height="17" rx="8.5" fill="none" stroke="#0a7a46"/>
     <text class="m" x="808" y="326" text-anchor="middle" font-size="10" letter-spacing="0.1em" fill="#0a7a46">MERGED</text>
   </g>
-<text class="m" x="48" y="352" font-size="13" fill="#000000ad">NVIDIA/Personal-AI-Router</text>
-  <text class="m" x="316" y="352" font-size="13" fill="#00000073">#95</text>
-  <text class="m" x="400" y="352" font-size="13" fill="#000000">test(services): isolate test app-data…</text>
+<text class="m" x="48" y="352" font-size="13" fill="#000000ad">CloudCompare/CloudCompare</text>
+  <text class="m" x="316" y="352" font-size="13" fill="#00000073">#2439</text>
+  <text class="m" x="400" y="352" font-size="13" fill="#000000">Add a save and load round-trip test f…</text>
   <g opacity="1">
     <animate attributeName="opacity" dur="2.6s" begin="1.05s" repeatCount="indefinite" values="1;0.45;1"/>
     <rect x="772" y="340" width="72" height="17" rx="8.5" fill="none" stroke="#0a7a46"/>
